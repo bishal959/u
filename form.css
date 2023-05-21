@@ -1,0 +1,32 @@
+.attendance {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .attendance form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .attendance label {
+    margin-bottom: 5px;
+  }
+  
+  .attendance select,
+  .attendance input[type="date"],
+  .attendance input[type="radio"] {
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
+  .attendance button[type="submit"] {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .attendance button[type="submit"]:hover {
+    background-color: #45a049;
+  }
