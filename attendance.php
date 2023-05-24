@@ -2,36 +2,23 @@
 
 include "db_conn.php";
 
-
-// Process form submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  // Get the form data
-  $name = $_POST['name'];
+// // Close database connection
+// mysqli_close($conn);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $user_name = $_POST['user_name'];
+  $subject = $_POST['subject'];
   $date = $_POST['date'];
+  $status = $_POST['r1'];
 
-  // Sanitize the data to prevent SQL injection
-  $name = mysqli_real_escape_string($conn, $name);
-  $date = mysqli_real_escape_string($conn, $date);
-
-  // Insert the data into the database
-  $sql = "INSERT INTO form_data (name, date) VALUES ('$name', '$date')";
-  if (mysqli_query($conn, $sql)) {
-    echo 'Form data has been saved.';
+  // Insert the form data into the database
+  $sql = "INSERT INTO attendance(user_name, subject, date, status) VALUES ('$user_name', '$subject', '$date', '$status')";
+  
+  if ($conn->query($sql) === TRUE) {
+    echo "Attendance recorded successfully";
   } else {
-    echo 'Error: ' . mysqli_error($conn);
+    echo "Error recording attendance: " . $conn->error;
   }
 }
-
-// Close database connection
-mysqli_close($conn);
+header("location:teacher.php");
+  $conn->close();
 ?>
-
-<script>
-
-setTimeout(function(){
-    console.log('Delayed message');
-}, 3000);
- setTimeout(() => {
-    Headers(location="teacher.php")
-}, 10); 
-</script>

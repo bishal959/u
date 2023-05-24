@@ -1,5 +1,7 @@
 <?php
+
 session_start();
+
 include "db_conn.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -32,27 +34,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "Incorrect current password";
   }
 }
-
+header("html.php");
 $conn->close();
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>HOME</title>
+ 
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
+<?php include("header.php"); ?>
      <h1>Hello, <?php echo $_SESSION['user_name']; ?></h1>
      <form method="post">
        <label for="username">Username:</label><br>
-       <input type="text" id="username" name="username"><br>
+       <input type="text" name="username" value="<?php echo $_SESSION['user_name']; ?>" readonly ><br>
        <label for="current_password">Current Password:</label><br>
-      <input type="password" id="current_password" name="current_password"><br>
-       <label for="password">New Password:</label><br>
-       <input type="password" id="password" name="password"><br>
+       <input type="password" id="current_password" name="current_password" required><br>
+       <label for="new_password">New Password:</label><br>
+       <input type="password" id="new_password" name="new_password" required><br>
+       <label for="confirm_password">Confirm Password:</label><br>
+       <input type="password" id="confirm_password" name="confirm_password" required><br>
        <input type="submit" value="Submit">
      </form>
 </body>
 </html>
-

@@ -29,20 +29,20 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 			$row = mysqli_fetch_assoc($result);
 			if($row['role'] == 'admin'){
 
-				$_SESSION['admin_name'] = $row['name'];
+				$_SESSION['admin_name'] = $row['user_name'];
 				$_SESSION['admin_id'] = $row['id'];
 				header('location:admin.php');
 	   
 			 }elseif($row['role'] == 'user'){
 	   
-				$_SESSION['user_name'] = $row['name'];
+				$_SESSION['user_name'] = $row['user_name'];
 				$_SESSION['user_id'] = $row['id'];
 				header('location: html.php');
 	   
 			 }elseif($row['role'] == 'teacher'){
-			$_SESSION['teacher_name'] = $row['name'];
+			$_SESSION['teacher_name'] = $row['user_name'];
 			$_SESSION['teacher_id'] = $row['id'];
-			header('location: teacher.php');
+			header('location: subject.php');
 
 			}
 	   

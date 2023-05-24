@@ -1,4 +1,6 @@
 <?php
+session_start();
+include("teacher_header.php");
 include "db_conn.php";
 
 $sql = "SELECT * FROM users";
@@ -14,4 +16,5 @@ if ($result->num_rows > 0) {
   echo "0 results";
 }
 $conn->close();
+include("footer.php");
 ?>

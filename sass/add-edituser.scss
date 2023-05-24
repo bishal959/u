@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  flex-direction: column;
+  main {
+    flex-grow: 1;
+  }
+}
+
+main {
+  width: 80%;
+  margin-inline: auto;
+
+  display: grid;
+  place-items: center;
+
+  height: 100%;
+
+  form {
+    --width: 25rem;
+    width: var(--width);
+    aspect-ratio: 1/1;
+    background: #222;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    border-radius: 1rem;
+    > * {
+      margin-inline: auto;
+      width: calc(var(--width) - 2rem);
+
+      border-radius: 1rem;
+      padding: 1rem;
+    }
+  }
+}

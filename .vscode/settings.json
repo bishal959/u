@@ -1,0 +1,55 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "x",
+            "database": "wptest",
+            "username": "root"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "database": "wptest",
+            "username": "root",
+            "name": "local",
+            "password": ""
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 1,
+            "server": "sql108.epizy.com",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "sa",
+            "database": "epiz_34107324_wptest",
+            "username": "epiz_34107324",
+            "askForPassword": true
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3305,
+            "driver": "MySQL",
+            "name": "ms",
+            "username": "root",
+            "database": "test",
+            "askForPassword": true
+        }
+    ]
+}
