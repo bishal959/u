@@ -1,13 +1,9 @@
 <?php
-
-$sname= "sql108.epizy.com";
-$unmae= "epiz_34107324";
-$password = "bb7P9jJ0VpqzCv";
-
-$db_name = "epiz_34107324_wptest";
-
+$sname= "10.121.8.4";
+$unmae= "root";
+$password = "VZRssh87411";
+$db_name = "wptest";
 $conn = mysqli_connect($sname, $unmae, $password, $db_name);
-
 if (!$conn) {
 	echo "Connection failed!";
 }
