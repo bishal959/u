@@ -10,6 +10,6 @@ RUN apt update && apt install -y \
 RUN apt clean && rm -rf /var/lib/apt/lists/*
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-RUN mkdir -p /home/$user/.composer && \
+RUN mkdir -p /home/www/.composer && \
 WORKDIR /var/www
 
