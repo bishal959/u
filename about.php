@@ -4,7 +4,7 @@ include("header.php");
 // Read the CSV file
 $data = array();
 if (($handle = fopen("form_data.csv", "r")) !== false) {
-  while (($row = fgetcsv($handle, 1000, ",")) !== false) {
+  while (($row = fgetcsv($handle, 1000, ",")) !== false) { 
     $data[] = $row;
   }
   fclose($handle);
